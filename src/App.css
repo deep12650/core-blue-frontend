@@ -281,13 +281,6 @@ dfn, cite, em, i {
 .text-primary {
   color: var(--primary-color) !important;
 }
-.text-hide {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
 
 /*------------------------------------------------
 /* 2.3 Forms
@@ -303,7 +296,7 @@ textarea,
 select {
   height: 50px;
   padding: 6px 15px;
-  background-color: var(--light-background-color);
+  background-color: var(--light-grey-color);
   border: 1px solid var(--grey-color);
   border-radius: 4px;
   box-shadow: none;
@@ -1010,7 +1003,7 @@ h2.product-title{
   background-color: var(--grey-color) !important;
 }
 .bg-dark-grey {
-  background-color: var(--dark-grey-color) !important;
+  background-color: var(--dark-color) !important;
 }
 .bg-light-grey {
   background-color: var(--light-grey-color) !important;
@@ -1278,7 +1271,7 @@ blockquote cite {
   border-radius: 0;
   box-shadow: none;
   overflow-anchor: none;
-  background-color: var(--light-background-color);
+  background-color: var(--light-grey-color);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1287,7 +1280,6 @@ blockquote cite {
   }
 }
 .accordion-button:not(.collapsed)::after {
-  background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
   transform: rotate(-180deg);
 }
 .accordion-button::after {
@@ -1318,7 +1310,7 @@ blockquote cite {
   margin: 0;
 }
 .accordion-item {
-  background-color: var(--light-background-color);
+  background-color: var(--light-grey-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .accordion-body {
@@ -1579,7 +1571,6 @@ blockquote cite {
 .search-popup.is-visible {
   opacity: 1;
   visibility: visible;
-  cursor: -webkit-image-set(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23FFF' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 1x, url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 2x), pointer;
   cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E"), pointer;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
@@ -2103,7 +2094,7 @@ i.icon.icon-arrow-io {
 }
 .tabs .tab {
   font-weight: 500;
-  color: var(--dark-grey-color);
+  color: darkgray;
   margin-right: 50px;
   cursor: pointer;
   transition: 0.2s all;
@@ -2150,7 +2141,7 @@ i.icon.icon-arrow-io {
 .swiper-arrows button {
   font-size: 1em;
   font-weight: 600;
-  color: var(--dark-grey-color);
+  color: darkgrey;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -2232,7 +2223,7 @@ i.icon.icon-arrow-io {
 #latest-blog .meta-date .meta-month {
   line-height: 1.4;
   font-weight: 600;
-  color: var(--dark-grey-color);
+  color: darkgray;
 }
 #latest-blog h3.post-title {
   font-size: 1.5em;

@@ -28,6 +28,7 @@ const ProductList: React.FC = () => {
                     <li data-tab-target="/" className="active tab">Our Boats</li>
                 </ul>
                 <div className="tab-content">
+                    console.log(products);
                     {products.map((product: Product) => (
                         <div id="all" className="active">
                             <div className="row d-flex flex-wrap">
