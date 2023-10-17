@@ -1,10 +1,11 @@
 // src/store/actions/productActions.ts
-import { GET_PRODUCTS } from './typeActions';
-import { Product } from '../types';
+import { GET_PAGINATED_PRODUCTS } from './typeActions';
+import { Dispatch } from 'redux';
 
-export const getProducts = (products: Product[]) => {
+
+export const getPaginatedProducts = (products: any) => {
     return {
-        type: GET_PRODUCTS,
+        type: GET_PAGINATED_PRODUCTS,
         payload: products,
     };
 };

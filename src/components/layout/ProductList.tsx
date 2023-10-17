@@ -1,25 +1,33 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../../redux/actions/productActions';
+import { getPaginatedProducts } from '../../redux/actions/productActions';
 import { GET_PRODUCTS_QUERY } from '../../graphql/queries/allProducts';
-import { Product } from '../../redux/types';
+import { RootState } from '../../store';
+import {Product, Products} from '../../redux/types';
 import {Image} from "react-bootstrap";
 
 const ProductList: React.FC = () => {
     const dispatch = useDispatch();
-    const products = useSelector((state: { products: Product[] }) => state.products);
+    const { page, limit } = useSelector((state: RootState) => state.products.products); // Assuming you have pagination info in Redux state
 
-    const { loading, error, data } = useQuery(GET_PRODUCTS_QUERY);
+    const { loading, error, data } = useQuery(GET_PRODUCTS_QUERY, {
+        variables: {
+            page,
+            limit,
+        },
+    });
 
     useEffect(() => {
         if (data) {
-            dispatch(getProducts(data.products));
+            dispatch(getPaginatedProducts(data.products));
         }
     }, [dispatch, data]);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error fetching products.</div>;
+
+    const products = data.products.data;
 
     return (
         <section id="selling-products" className="col-md-9 product-store">
@@ -28,7 +36,6 @@ const ProductList: React.FC = () => {
                     <li data-tab-target="/" className="active tab">Our Boats</li>
                 </ul>
                 <div className="tab-content">
-                    console.log(products);
                     {products.map((product: Product) => (
                         <div id="all" className="active">
                             <div className="row d-flex flex-wrap">
@@ -55,7 +62,7 @@ const ProductList: React.FC = () => {
                                     </div>
                                     <div className="product-detail">
                                         <h3 className="product-title">
-                                            <a href={"#"} key={product.id}>{product.name}</a>
+                                            <a href="product-detail.html">{product.name}</a>
                                         </h3>
                                         {/*<div className="item-price text-primary">$40.00</div>*/}
                                     </div>

@@ -1,3 +1,14 @@
+export type PaginatorInfo = {
+    total: number;
+    currentPage: number;
+    hasMorePages: boolean;
+}
+
+export type Products = {
+    paginatorInfo: PaginatorInfo;
+    data: Product[];
+}
+
 export type Product = {
     id: number;
     name: string;
