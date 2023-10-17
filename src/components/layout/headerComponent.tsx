@@ -3,11 +3,6 @@ import React from "react";
 const HeaderComponent: React.FC = () => {
     return (
         <div>
-            <div className="preloader-wrapper">
-                <div className="preloader">
-                </div>
-            </div>
-
             <div className="search-popup">
                 <div className="search-popup-container">
 
@@ -19,29 +14,11 @@ const HeaderComponent: React.FC = () => {
                         </button>
                     </form>
 
-                    <h5 className="cat-list-title">Browse Categories</h5>
+                    <h5 className="cat-list-title">Browse Catalog</h5>
 
                     <ul className="cat-list">
                         <li className="cat-list-item">
-                            <a href="shop.html" title="Men Jackets">Men Jackets</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Fashion">Fashion</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Casual Wears">Casual Wears</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Women">Women</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Trending">Trending</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Hoodie">Hoodie</a>
-                        </li>
-                        <li className="cat-list-item">
-                            <a href="shop.html" title="Kids">Kids</a>
+                            <a href="/" title="Our Boats">Our Boats</a>
                         </li>
                     </ul>
                 </div>

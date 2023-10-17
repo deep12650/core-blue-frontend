@@ -7,16 +7,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 library.add(fas);
+
+const client = new ApolloClient({
+    uri: 'http://127.0.0.1:8000/graphql', // Replace with your GraphQL API endpoint
+    cache: new InMemoryCache(),
+});
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <ApolloProvider client={client}>
+        <App />
+    </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
